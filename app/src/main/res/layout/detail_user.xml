@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BackgroundLayout"
+    tools:context=".DetailUser">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/BackgroundLayout"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/avatar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:background="@drawable/sampul"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/iv_avatar_received"
+                android:layout_width="141dp"
+                android:layout_height="109dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:siBorderColor="@android:color/holo_orange_dark"
+                app:siBorderWidth="6dp"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_name_received"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatar_received" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="@string/location"
+                android:textColor="@color/gray_light"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name_received"
+                app:layout_constraintStart_toStartOf="@+id/tv_name_received"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_received" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:text="@string/company"
+                android:textColor="@color/gray_light"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/detail_information"
+            style="@style/TextViewChild"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/detail_border"
+            android:padding="5dp"
+            android:text="@string/user_details_information"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_detail" />
+
+        <TableLayout
+            style="@style/BackgroundLayout"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="9dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_information">
+
+            <TableRow
+                style="@style/BackgroundLayout">
+
+                <TextView
+                    android:layout_width="136dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="1dp"
+                    android:gravity="center"
+                    android:text="@string/repository"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:gravity="center"
+                    android:text="@string/followers"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_object_received"
+                    style="@style/TextViewChild"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="@string/following" />
+            </TableRow>
+            <TableRow
+                style="@style/BackgroundLayout">
+
+                <TextView
+                    android:id="@+id/tv_item_repositoryg"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="1dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/repository"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_item_followers"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/followers"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_item_following"
+                    style="@style/TextViewChild"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/following"
+                    android:textSize="20sp"/>
+            </TableRow>
+
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
