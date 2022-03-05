@@ -73,12 +73,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/username"
+            android:minWidth="48dp"
             android:minHeight="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="?attr/actionModeShareDrawable"
-            tools:ignore="DuplicateSpeakableTextCheck" />
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

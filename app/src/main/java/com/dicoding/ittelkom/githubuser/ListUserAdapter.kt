@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.ittelkom.githubuser.ListUserAdapter.ListViewHolder
+
 
 class ListUserAdapter(private val listUser : ArrayList<DataUser>):
     RecyclerView.Adapter<ListViewHolder>() {
@@ -27,6 +29,7 @@ class ListUserAdapter(private val listUser : ArrayList<DataUser>):
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvUsername: TextView = itemView.findViewById(R.id.tv_item_username)
         var container: CardView = itemView.findViewById(R.id.card_view)
+
 
     }
 
@@ -47,6 +50,7 @@ class ListUserAdapter(private val listUser : ArrayList<DataUser>):
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listUser[holder.adapterPosition])
         }
+
         holder.container.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailUser::class.java)
             intent.putExtra(DetailUser.DATA, user)
