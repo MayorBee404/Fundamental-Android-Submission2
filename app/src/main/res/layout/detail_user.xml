@@ -1,100 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp"
-    tools:context=".DetailUser">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tabTextColor="@android:color/holo_orange_light"
+        app:tabSelectedTextColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 
-    <com.github.siyamed.shapeimageview.RoundedImageView
-        android:id="@+id/detail_avatar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:siBorderColor="@android:color/holo_orange_dark"
-        app:siBorderWidth="5dp"
-        app:siRadius="100dp"
-        android:layout_centerHorizontal="true"
-        tools:ignore="ImageContrastCheck"
-        tools:src="@tools:sample/avatars" />
-    <TextView
-        android:id="@+id/detail_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/detail_avatar"
-        android:text="@string/name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/detail_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_name"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:ellipsize="end"
-        android:textSize="18sp"
-        android:maxLines="3"
-        android:text="@string/username"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/detail_repository"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toStartOf="@id/detail_followers"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="@string/repository"
-        android:layout_alignBaseline="@id/detail_followers"/>
-    <TextView
-        android:id="@+id/detail_followers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_username"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="@string/followers"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/detail_following"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@id/detail_followers"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="@string/following"
-        android:layout_alignBaseline="@id/detail_followers"/>
-    <TextView
-        android:id="@+id/detail_company"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_followers"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="@string/company"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/detail_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_company"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:ellipsize="end"
-        android:maxLines="3"
-        android:text="@string/location"
-        android:layout_centerHorizontal="true"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintVertical_bias="1.0" />
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:theme="@style/Theme.MaterialComponents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ui.detailuser.DetailUser">
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/detail_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            app:siBorderColor="@android:color/holo_orange_dark"
+            app:siBorderWidth="5dp"
+            app:siRadius="100dp"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/name"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detail_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/username"
+            android:textColor="#757575"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/detail_repository"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/detail_followers"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@id/detail_followers"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/repository"
+            android:textColor="#757575" />
+
+        <TextView
+            android:id="@+id/detail_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/followers"
+            android:textColor="#757575" />
+
+        <TextView
+            android:id="@+id/detail_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/detail_followers"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/detail_followers"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/following"
+            android:textColor="#757575" />
+
+        <TextView
+            android:id="@+id/detail_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+
+            android:text="@string/company"
+            android:textColor="#757575" />
+
+        <TextView
+            android:id="@+id/detail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_company"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/location"
+            android:textColor="#757575" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

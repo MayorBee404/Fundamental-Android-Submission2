@@ -1,4 +1,4 @@
-package com.dicoding.ittelkom.githubuser
+package com.dicoding.ittelkom.githubuser.model
 
 
 import android.os.Parcelable
