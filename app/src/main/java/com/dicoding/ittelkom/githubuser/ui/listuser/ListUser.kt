@@ -13,7 +13,7 @@ import com.dicoding.ittelkom.githubuser.network.Resource
 import com.dicoding.ittelkom.githubuser.network.ViewStateCallBack
 import com.dicoding.ittelkom.githubuser.ui.adapter.ListUserAdapter
 
-@Suppress("UNCHECKED_CAST")
+
 class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
 
     private lateinit var listUserBinding: ListUserBinding
@@ -23,7 +23,6 @@ class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list_user)
         listUserBinding = ListUserBinding.inflate(layoutInflater)
         setContentView(listUserBinding.root)
 
@@ -42,9 +41,9 @@ class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
                     clearFocus()
                     viewModel.searchUser(userQuery).observe(this@ListUser) {
                         when (it) {
-                            is Resource.Error<*> -> onFailed(it.message)
-                            is Resource.Loading<*> -> onLoading()
-                            is Resource.Success<*> -> it.data?.let { it1 -> onSuccess(it1 as List<UserResponse>) }
+                            is Resource.Error -> onFailed(it.message)
+                            is Resource.Loading-> onLoading()
+                            is Resource.Success -> it.data?.let { it1 -> onSuccess(it1) }
                         }
                     }
                     return true
@@ -91,7 +90,6 @@ class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
                     text = resources.getString(R.string.user_not_found)
                     visibility = visible
                 }
-                //Memunculkan error pada exception
             } else {
                 ivSearchIcon.apply {
                     setImageResource(R.drawable.ic_baseline_search_24)

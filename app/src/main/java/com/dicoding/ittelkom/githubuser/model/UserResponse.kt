@@ -53,10 +53,10 @@ data class UserResponse(
 	val name: String,
 
 	@field:SerializedName("company")
-	val company: Any,
+	val company: String,
 
 	@field:SerializedName("location")
-	val location: Any,
+	val location: String,
 
 	@field:SerializedName("id")
 	val id: Int,

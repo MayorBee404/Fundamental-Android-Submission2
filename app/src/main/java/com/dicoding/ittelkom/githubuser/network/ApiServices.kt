@@ -5,10 +5,10 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiServices {
-    @Headers("Authorization: token <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>")
+    @Headers("Authorization: token <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>")
     @GET("users/{username}")
     fun getDetailUser(
-        @Path("id") id: String
+        @Path("username") username: String
     ): Call<UserResponse>
 
     @GET("search/users")

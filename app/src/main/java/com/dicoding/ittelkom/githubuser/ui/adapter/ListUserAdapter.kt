@@ -9,6 +9,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.ittelkom.githubuser.databinding.ItemRowUserBinding
 import com.dicoding.ittelkom.githubuser.model.UserResponse
+import com.dicoding.ittelkom.githubuser.ui.detailuser.DetailUser
+import com.dicoding.ittelkom.githubuser.ui.listuser.ListUser
+
 //import com.dicoding.ittelkom.githubuser.ui.detailuser.DetailUser
 
 

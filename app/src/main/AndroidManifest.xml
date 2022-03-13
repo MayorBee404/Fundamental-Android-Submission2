@@ -15,12 +15,8 @@
             android:name=".ui.listuser.ListUser"
             android:exported="false" />
         <activity
-            android:name=".ListUser"
+            android:name=".ui.detailuser.DetailUser"
             android:exported="false" />
-        <activity
-            android:name=".DetailUser"
-            android:exported="false"
-            android:label="@string/detail_user" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
