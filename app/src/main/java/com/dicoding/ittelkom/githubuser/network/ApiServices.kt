@@ -1,15 +1,15 @@
 package com.dicoding.ittelkom.githubuser.network
 import com.dicoding.ittelkom.githubuser.model.SearchUserResponse
-import com.dicoding.ittelkom.githubuser.model.UserResponse
+import com.dicoding.ittelkom.githubuser.model.DetailResource
 import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiServices {
-    @Headers("Authorization: token <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>")
     @GET("users/{username}")
     fun getDetailUser(
-        @Path("username") username: String
-    ): Call<UserResponse>
+        @Path("username")
+        login: String
+    ): Call<DetailResource>
 
     @GET("search/users")
     fun searchUsers (
@@ -20,13 +20,16 @@ interface ApiServices {
     @GET("users/{username}/followers")
     fun getUserFollowers (
         @Path("username")
-        username: String
-    ): Call<List<UserResponse>>
+        login: String
+    ): Call<List<DetailResource>>
+
 
     @GET("users/{username}/following")
     fun getUserFollowing (
         @Path("username")
-        username: String
-    ): Call<List<UserResponse>>
+        login: String
+    ): Call<List<DetailResource>>
+
+
 
 }

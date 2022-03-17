@@ -13,9 +13,9 @@
     <string name="search_message" >Cari User Favorit Anda</string>
     <string name="search_hint" >Search User?</string>
     <string name="user_not_found" >User yang dicari tidak ada </string>
-    <string name="followers_not_found" >%s Tidak ada yang diikuti</string>
-    <string name="following_not_found" >%s Tidak ada yang mengikuti</string>
     <string name="setting">Setting</string>
+    <string name="github_user_app">Github User App</string>
+    <string name="githublogo">GitHubLogo</string>
 
 
     <string-array name="username">

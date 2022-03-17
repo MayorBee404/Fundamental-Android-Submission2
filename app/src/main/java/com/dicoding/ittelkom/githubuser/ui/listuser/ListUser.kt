@@ -8,13 +8,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.ittelkom.githubuser.R
 import com.dicoding.ittelkom.githubuser.databinding.ListUserBinding
-import com.dicoding.ittelkom.githubuser.model.UserResponse
+import com.dicoding.ittelkom.githubuser.model.DetailResource
 import com.dicoding.ittelkom.githubuser.network.Resource
 import com.dicoding.ittelkom.githubuser.network.ViewStateCallBack
 import com.dicoding.ittelkom.githubuser.ui.adapter.ListUserAdapter
 
 
-class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
+class ListUser : AppCompatActivity(),ViewStateCallBack<List<DetailResource>>{
 
     private lateinit var listUserBinding: ListUserBinding
     private lateinit var userQuery: String
@@ -26,7 +26,7 @@ class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
         listUserBinding = ListUserBinding.inflate(layoutInflater)
         setContentView(listUserBinding.root)
 
-        viewModel = ViewModelProvider(this).get(ListUserModel::class.java)
+        viewModel = ViewModelProvider(this)[ListUserModel::class.java]
         userAdapter = ListUserAdapter()
         listUserBinding.includeMainSearch.rvListUser.apply {
             adapter = userAdapter
@@ -60,7 +60,7 @@ class ListUser : AppCompatActivity(),ViewStateCallBack<List<UserResponse>>{
         inflater.inflate(R.menu.custom_menu, menu)
         return true
     }
-    override fun onSuccess(data: List<UserResponse>) {
+    override fun onSuccess(data: List<DetailResource>) {
         userAdapter.setAllData(data)
         listUserBinding.includeMainSearch.apply {
             ivSearchIcon.visibility = invisible

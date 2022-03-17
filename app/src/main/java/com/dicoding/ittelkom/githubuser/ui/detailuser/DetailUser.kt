@@ -1,26 +1,98 @@
 package com.dicoding.ittelkom.githubuser.ui.detailuser
 
+import android.annotation.SuppressLint
+import android.content.Intent.EXTRA_USER
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.dicoding.ittelkom.githubuser.R
 import com.dicoding.ittelkom.githubuser.databinding.DetailUserBinding
-import com.dicoding.ittelkom.githubuser.model.UserResponse
+import com.dicoding.ittelkom.githubuser.model.DetailResource
+import com.dicoding.ittelkom.githubuser.network.Resource
+import com.dicoding.ittelkom.githubuser.network.ViewStateCallBack
+import com.dicoding.ittelkom.githubuser.ui.adapter.FollowPagerAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
-/*class DetailUser : AppCompatActivity(), ViewStateCallback<UserResponse?>{
-    private lateinit var detailBinding : DetailUserBinding
-    private lateinit var viewModel : DetailViewModel
+class DetailUser : AppCompatActivity(), ViewStateCallBack<DetailResource?> {
+
+    companion object {
+
+        private val TAB_TITLES = intArrayOf(
+            R.string.followers,
+            R.string.following
+        )
+    }
+
+    private lateinit var detailUserBinding: DetailUserBinding
+    private lateinit var viewModel: DetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        detailBinding = DetailUserBinding.inflate(layoutInflater)
-        setContentView(detailBinding.root)
-        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        detailUserBinding = DetailUserBinding.inflate(layoutInflater)
+        setContentView(detailUserBinding.root)
+        viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             elevation = 0f
         }
 
+        val login = intent.getStringExtra(EXTRA_USER)
+
+
+            viewModel.getDetailUser(login).observe(this) {
+                when (it) {
+                    is Resource.Error-> onFailed(it.message)
+                    is Resource.Loading-> onLoading()
+                    is Resource.Success-> onSuccess(it.data)
+                }
+        }
+
+        val pageAdapter = FollowPagerAdapter(this, login.toString())
+
+        detailUserBinding.apply {
+            viewPager.adapter = pageAdapter
+            TabLayoutMediator(tabs, viewPager) { tabs, position ->
+                tabs.text = resources.getString(TAB_TITLES[position])
+            }.attach()
+        }
     }
-}*/
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
+   @SuppressLint("SetTextI18n")
+   override fun onSuccess(data: DetailResource?) {
+        detailUserBinding.apply {
+                detailRepository.text = "Repository : ${data?.publicRepos.toString()}"
+                detailFollowers.text = "Followers : ${data?.followers.toString()}"
+                detailFollowing.text = "Following : ${data?.following.toString()}"
+                detailUsername.text = data?.login
+                detailName.text = data?.name
+                detailCompany.text = data?.company
+                detailLocation.text = data?.location
+
+                Glide.with(this@DetailUser)
+                    .load(data?.avatarUrl)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(detailAvatar)
+
+                supportActionBar?.title = data?.login
+
+        }
+    }
+
+    override fun onLoading() {
+
+
+    }
+
+   override fun onFailed(message: String?) {
+
+    }
+
+}
