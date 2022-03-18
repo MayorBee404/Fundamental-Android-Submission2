@@ -5,7 +5,7 @@
      alt="Submission1 2"
      style="float: left; margin-right: 10px;"
      width="200" /> 
-<img src="https://github.com/MayorBee404/Fundamental-Android-Submission2/blob/master/screenshot/Screenshot_20220318_172016.png"
+<img src="https://github.com/MayorBee404/Fundamental-Android-Submission2/blob/master/screenshot/Screenshot_20220318_175129.png"
      alt="Submission1 2"
      style="float: left; margin-right: 10px;"
      width="200" />
