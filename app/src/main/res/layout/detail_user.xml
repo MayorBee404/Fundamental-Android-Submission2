@@ -29,14 +29,13 @@
 
                 <ProgressBar
                     android:id="@+id/detail_progress_bar"
-                    android:layout_width="99dp"
-                    android:layout_height="99dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/detail_avatar"
                     app:layout_constraintEnd_toEndOf="@+id/detail_avatar"
+                    app:layout_constraintHorizontal_bias="0.515"
                     app:layout_constraintStart_toStartOf="@+id/detail_avatar"
-                    app:layout_constraintTop_toTopOf="@+id/detail_avatar"
-                    app:layout_constraintVertical_bias="0.17" />
+                    app:layout_constraintTop_toTopOf="@+id/detail_name" />
 
                 <TextView
                     android:id="@+id/detail_name"
