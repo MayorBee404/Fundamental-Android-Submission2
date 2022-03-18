@@ -3,6 +3,7 @@ package com.dicoding.ittelkom.githubuser.ui.detailuser
 import android.annotation.SuppressLint
 import android.content.Intent.EXTRA_USER
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -57,6 +58,10 @@ class DetailUser : AppCompatActivity(), ViewStateCallBack<DetailResource?> {
             TabLayoutMediator(tabs, viewPager) { tabs, position ->
                 tabs.text = resources.getString(TAB_TITLES[position])
             }.attach()
+
+            detailProgressBar.visibility = visible
+            viewPager.visibility = invisible
+            tabs.visibility = invisible
         }
     }
 
@@ -75,19 +80,31 @@ class DetailUser : AppCompatActivity(), ViewStateCallBack<DetailResource?> {
                 detailName.text = data?.name
                 detailCompany.text = data?.company
                 detailLocation.text = data?.location
+            detailProgressBar.visibility = invisible
+            relativeLayout.visibility = visible
+            tabs.visibility = visible
+            viewPager.visibility = visible
+
+            detailAvatar.visibility = visible
 
                 Glide.with(this@DetailUser)
                     .load(data?.avatarUrl)
-                    .apply(RequestOptions.circleCropTransform())
+                    .apply(RequestOptions().override(80, 80))
                     .into(detailAvatar)
 
                 supportActionBar?.title = data?.login
+
 
         }
     }
 
     override fun onLoading() {
-
+        detailUserBinding.apply {
+            detailProgressBar.visibility = visible
+            relativeLayout.visibility = invisible
+            viewPager.visibility = invisible
+            tabs.visibility = invisible
+        }
 
     }
 

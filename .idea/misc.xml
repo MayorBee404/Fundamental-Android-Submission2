@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/detail_user.xml" value="0.25" />
         <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/follower_fragment.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/following_fragment.xml" value="0.19067028985507245" />
-        <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/include_main_search.xml" value="0.19067028985507245" />
+        <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/include_detail_user.xml" value="0.12" />
+        <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/include_main_search.xml" value="0.1" />
         <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/item_row_user.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/admin/Documents/Dokumen Abiyansa/GithubUser/app/src/main/res/layout/list_user.xml" value="0.19067028985507245" />
       </map>
