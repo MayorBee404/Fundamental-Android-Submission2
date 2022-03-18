@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="@drawable/detail_border">
+    android:theme="@style/Theme.MaterialComponents" >
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,16 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.291"
-        app:srcCompat="@drawable/github_logo" />
+        app:srcCompat="@drawable/ic_bxl_github"
+        android:contentDescription="@string/githublogo" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="Github User App"
-        android:textSize="30dp"
-        android:textColor="@color/white"
+        android:text="@string/github_user_app"
+        android:textSize="30sp"
+        android:textColor="@color/orange_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
