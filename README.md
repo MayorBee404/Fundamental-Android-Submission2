@@ -1,4 +1,4 @@
-# Dicoding Fundamental Android Submission 1
+# Dicoding Fundamental Android Submission 2
 
 
 
