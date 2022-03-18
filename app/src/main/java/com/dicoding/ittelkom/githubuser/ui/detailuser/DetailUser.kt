@@ -61,7 +61,13 @@ class DetailUser : AppCompatActivity(), ViewStateCallBack<DetailResource?> {
 
             detailProgressBar.visibility = visible
             viewPager.visibility = invisible
-            tabs.visibility = invisible
+            detailRepository.visibility = invisible
+            detailFollowers.visibility = invisible
+            detailFollowing.visibility = invisible
+            detailUsername.visibility = invisible
+            detailName.visibility = invisible
+            detailCompany.visibility = invisible
+            detailLocation.visibility= invisible
         }
     }
 
@@ -80,8 +86,14 @@ class DetailUser : AppCompatActivity(), ViewStateCallBack<DetailResource?> {
                 detailName.text = data?.name
                 detailCompany.text = data?.company
                 detailLocation.text = data?.location
+            detailRepository.visibility = visible
+            detailFollowers.visibility = visible
+            detailFollowing.visibility = visible
+            detailUsername.visibility = visible
+            detailName.visibility = visible
+            detailCompany.visibility = visible
+            detailLocation.visibility= visible
             detailProgressBar.visibility = invisible
-            relativeLayout.visibility = visible
             tabs.visibility = visible
             viewPager.visibility = visible
 
