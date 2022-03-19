@@ -15,11 +15,11 @@
      width="200" />
 
 #### Submission 1 Checklists
-- [x] Menampilkan data pada halaman aplikasi dengan minimal jumlah 10 item. (Terpenuhi)</strong>.
-- [x] Menggunakan RecyclerView. (Terpenuhi)</strong>.
-- [x] Menampilkan avatar dan informasi user pada halaman Detail User. (Terpenuhi) </strong>.
-- [x] Menggunakan Parcelable sebagai interface dari obyek data yang akan dikirimkan antar Activity. (Terpenuhi).</strong>
-- [x] Aplikasi tidak force closed. (Terpenuhi)</strong>
+- [x] Mempertahankan fitur pada Submission 1. (Terpenuhi)</strong>.
+- [x] Pencarian User menggunakan data dari API berjalan dengan baik. (Terpenuhi)</strong>.
+- [x] Menggunakan TabLayout sebagai navigasi antara halaman List Follower dan List Following. (Terpenuhi) </strong>.
+- [x] Terdapat indikator loading saat aplikasi memuat data di semua halaman. (Terpenuhi).</strong>
+- [x] Aplikasi tidak force closed. (Terpenuhi) </strong>
 
 #### Review Cheklists
 :star::star::star::star::star:
