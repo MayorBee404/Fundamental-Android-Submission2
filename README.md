@@ -14,7 +14,7 @@
      style="float: left; margin-right: 10px;"
      width="200" />
 
-#### Submission 1 Checklists
+#### Submission 2 Checklists
 - [x] Mempertahankan fitur pada Submission 1. (Terpenuhi)</strong>.
 - [x] Pencarian User menggunakan data dari API berjalan dengan baik. (Terpenuhi)</strong>.
 - [x] Menggunakan TabLayout sebagai navigasi antara halaman List Follower dan List Following. (Terpenuhi) </strong>.
