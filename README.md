@@ -21,5 +21,5 @@
 - [x] Terdapat indikator loading saat aplikasi memuat data di semua halaman. (Terpenuhi).</strong>
 - [x] Aplikasi tidak force closed. (Terpenuhi) </strong>
 
-#### Review Cheklists
+#### Review Rating
 :star::star::star::star::star:
